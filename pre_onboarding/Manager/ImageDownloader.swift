@@ -20,7 +20,7 @@ final class ImageDownloader {
             return
         }
         
-        let id = String(describing: imageView)
+        let id = ObjectIdentifier(imageView)
         var request = URLRequest(url: url)
         request.httpMethod = HTTPMethod.get.rawValue
         let dataTask = URLSession.shared.dataTask(with: request) { data, response, error in
@@ -42,19 +42,19 @@ final class ImageDownloader {
     }
     
     func cancelDownload(from imageView: UIImageView) {
-        let id = String(describing: imageView)
+        let id = ObjectIdentifier(imageView)
         guard let dataTask = self.dataTasks[id] else { return }
         dataTask.cancel()
         self.dataTasks[id] = nil
     }
     
     func progress(from imageView: UIImageView) -> Progress? {
-        let id = String(describing: imageView)
+        let id = ObjectIdentifier(imageView)
         guard let dataTaks = self.dataTasks[id] else { return nil }
         return dataTaks.progress
     }
     
-    private var dataTasks: [String: URLSessionDataTask] = [:]
+    private var dataTasks: [ObjectIdentifier: URLSessionDataTask] = [:]
     private var imageCache = NSCache<NSString, UIImage>()
     
 }
