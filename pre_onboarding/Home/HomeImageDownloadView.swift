@@ -33,13 +33,17 @@ final class HomeImageDownloadView: UIView {
         self.progressView.progress = progress
     }
     
-    func setImage(_ image: UIImage?) {
-        self.imageView.image = image
+    func setImage(_ url: String?) {
+        self.reset()
+        self.imageView.setImage(url: url)
+        self.progressView.observedProgress = self.imageView.progress
     }
     
     func reset() {
         self.progressView.progress = 0
+        self.imageView.cancelDownloadImage()
         self.imageView.image = UIImage(systemName: "photo")?.withRenderingMode(.alwaysTemplate)
+        self.progressView.observedProgress = nil
     }
     
     private func setupLayout() {
@@ -48,7 +52,6 @@ final class HomeImageDownloadView: UIView {
             make.top.leading.bottom.equalToSuperview()
             make.size.equalTo(CGSize(width: 100, height: 60))
         }
-        
         
         self.addSubview(self.loadButton)
         self.loadButton.snp.makeConstraints { make in

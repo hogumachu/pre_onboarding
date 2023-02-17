@@ -11,6 +11,7 @@ import Then
 
 protocol HomeViewDelegate: AnyObject {
     
+    var imageCount: Int { get }
     func homeViewDidTapLoadImageButton(_ view: HomeView, at tag: Int)
     func homeViewDidTapLoadAllImageButton(_ view: HomeView)
     
@@ -18,7 +19,9 @@ protocol HomeViewDelegate: AnyObject {
 
 final class HomeView: UIView {
     
-    weak var delegate: HomeViewDelegate?
+    weak var delegate: HomeViewDelegate? {
+        didSet { self.updateImageViews() }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -30,18 +33,14 @@ final class HomeView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupLayout() {
-        self.addSubview(self.imageViewStackView)
-        self.imageViewStackView.snp.makeConstraints { make in
-            make.top.leading.trailing.equalToSuperview()
-        }
-        
+    func updateImageViews() {
+        guard let imageCount = self.delegate?.imageCount else { return }
         self.imageViewStackView
             .subviews
             .forEach { $0.removeFromSuperview() }
         
         self.imageViews = []
-        self.imageViews = (0..<self.imageCount)
+        self.imageViews = (0..<imageCount)
             .map { _ in HomeImageDownloadView(frame: .zero) }
             .enumerated()
             .map { offset, view in
@@ -52,6 +51,18 @@ final class HomeView: UIView {
                 }
                 return view
             }
+    }
+    
+    func updateImage(tag: Int, url: String?) {
+        guard let imageView = self.imageViews[safe: tag] else { return }
+        imageView.setImage(url)
+    }
+    
+    private func setupLayout() {
+        self.addSubview(self.imageViewStackView)
+        self.imageViewStackView.snp.makeConstraints { make in
+            make.top.leading.trailing.equalToSuperview()
+        }
         
         self.addSubview(self.loadAllButton)
         self.loadAllButton.snp.makeConstraints { make in
@@ -80,8 +91,6 @@ final class HomeView: UIView {
     @objc private func loadAllButtonDidTap(_ sender: UIButton) {
         self.delegate?.homeViewDidTapLoadAllImageButton(self)
     }
-    
-    private let imageCount = 5
     
     private var imageViews: [HomeImageDownloadView] = []
     private let imageViewStackView = UIStackView(frame: .zero)

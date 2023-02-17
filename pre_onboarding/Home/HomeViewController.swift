@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 import Then
+import RxSwift
 
 final class HomeViewController: UIViewController {
     
@@ -34,22 +35,39 @@ final class HomeViewController: UIViewController {
     }
     
     private func bind(viewModel: HomeViewModel) {
-        
+        viewModel
+            .viewModelEvent
+            .withUnretained(self)
+            .observe(on: MainScheduler.asyncInstance)
+            .subscribe(onNext: { viewController, event in viewController.handle(event) })
+            .disposed(by: self.disposeBag)
+    }
+    
+    private func handle(_ event: HomeViewModelEvent) {
+        switch event {
+        case .updateImage(let tag, let url):
+            self.homeView.updateImage(tag: tag, url: url)
+        }
     }
     
     private let homeView = HomeView(frame: .zero)
     private let viewModel: HomeViewModel
+    private let disposeBag = DisposeBag()
 
 }
 
 extension HomeViewController: HomeViewDelegate {
     
+    var imageCount: Int {
+        self.viewModel.numberOfImages
+    }
+    
     func homeViewDidTapLoadAllImageButton(_ view: HomeView) {
-        print("## Download All Images")
+        self.viewModel.downloadAllImages()
     }
     
     func homeViewDidTapLoadImageButton(_ view: HomeView, at tag: Int) {
-        print("## Download Image at \(tag)")
+        self.viewModel.downloadImage(at: tag)
     }
     
 }

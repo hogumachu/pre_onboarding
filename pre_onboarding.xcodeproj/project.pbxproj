@@ -18,6 +18,15 @@
 		F14B4DB8299F2F180055B842 /* HomeImageDownloadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B4DB7299F2F180055B842 /* HomeImageDownloadView.swift */; };
 		F14B4DBB299F378C0055B842 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B4DBA299F378C0055B842 /* ImageDownloader.swift */; };
 		F14B4DBE299F38880055B842 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B4DBD299F38880055B842 /* HTTPMethod.swift */; };
+		F14B4DC0299F3AD90055B842 /* Host.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B4DBF299F3AD80055B842 /* Host.swift */; };
+		F14B4DC3299F3B0D0055B842 /* DogAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B4DC2299F3B0D0055B842 /* DogAPI.swift */; };
+		F14B4DC6299F3B2A0055B842 /* Dog.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B4DC5299F3B2A0055B842 /* Dog.swift */; };
+		F14B4DC8299F3B690055B842 /* TargetType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B4DC7299F3B690055B842 /* TargetType.swift */; };
+		F14B4DCA299F3B900055B842 /* NetworkTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B4DC9299F3B900055B842 /* NetworkTask.swift */; };
+		F14B4DCE299F3C190055B842 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B4DCD299F3C190055B842 /* NetworkProvider.swift */; };
+		F14B4DD0299F3C830055B842 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B4DCF299F3C830055B842 /* NetworkError.swift */; };
+		F14B4DD3299F3EC80055B842 /* UIImageView+ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B4DD2299F3EC80055B842 /* UIImageView+ImageDownloader.swift */; };
+		F14B4DD5299F3FBC0055B842 /* Array+.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B4DD4299F3FBC0055B842 /* Array+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +45,15 @@
 		F14B4DB7299F2F180055B842 /* HomeImageDownloadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeImageDownloadView.swift; sourceTree = "<group>"; };
 		F14B4DBA299F378C0055B842 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		F14B4DBD299F38880055B842 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		F14B4DBF299F3AD80055B842 /* Host.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Host.swift; sourceTree = "<group>"; };
+		F14B4DC2299F3B0D0055B842 /* DogAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DogAPI.swift; sourceTree = "<group>"; };
+		F14B4DC5299F3B2A0055B842 /* Dog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dog.swift; sourceTree = "<group>"; };
+		F14B4DC7299F3B690055B842 /* TargetType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetType.swift; sourceTree = "<group>"; };
+		F14B4DC9299F3B900055B842 /* NetworkTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTask.swift; sourceTree = "<group>"; };
+		F14B4DCD299F3C190055B842 /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
+		F14B4DCF299F3C830055B842 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		F14B4DD2299F3EC80055B842 /* UIImageView+ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+ImageDownloader.swift"; sourceTree = "<group>"; };
+		F14B4DD4299F3FBC0055B842 /* Array+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				F14B4DBC299F387B0055B842 /* Network */,
+				F14B4DD1299F3EBA0055B842 /* Extension */,
 				F14B4DB9299F37840055B842 /* Manager */,
 				F14B4DB2299F2DA40055B842 /* Home */,
 				F14B4D9C299F2C860055B842 /* AppDelegate.swift */,
@@ -122,9 +141,41 @@
 		F14B4DBC299F387B0055B842 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				F14B4DBF299F3AD80055B842 /* Host.swift */,
+				F14B4DC7299F3B690055B842 /* TargetType.swift */,
 				F14B4DBD299F38880055B842 /* HTTPMethod.swift */,
+				F14B4DCD299F3C190055B842 /* NetworkProvider.swift */,
+				F14B4DC9299F3B900055B842 /* NetworkTask.swift */,
+				F14B4DCF299F3C830055B842 /* NetworkError.swift */,
+				F14B4DC1299F3AEC0055B842 /* API */,
+				F14B4DC4299F3B160055B842 /* Model */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		F14B4DC1299F3AEC0055B842 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				F14B4DC2299F3B0D0055B842 /* DogAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		F14B4DC4299F3B160055B842 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F14B4DC5299F3B2A0055B842 /* Dog.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F14B4DD1299F3EBA0055B842 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F14B4DD4299F3FBC0055B842 /* Array+.swift */,
+				F14B4DD2299F3EC80055B842 /* UIImageView+ImageDownloader.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,14 +292,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F14B4DC8299F3B690055B842 /* TargetType.swift in Sources */,
+				F14B4DD0299F3C830055B842 /* NetworkError.swift in Sources */,
 				F14B4DA1299F2C860055B842 /* HomeViewController.swift in Sources */,
 				F14B4DB4299F2E2E0055B842 /* HomeView.swift in Sources */,
+				F14B4DD3299F3EC80055B842 /* UIImageView+ImageDownloader.swift in Sources */,
 				F14B4DBB299F378C0055B842 /* ImageDownloader.swift in Sources */,
 				F14B4D9D299F2C860055B842 /* AppDelegate.swift in Sources */,
 				F14B4DBE299F38880055B842 /* HTTPMethod.swift in Sources */,
+				F14B4DC6299F3B2A0055B842 /* Dog.swift in Sources */,
+				F14B4DC3299F3B0D0055B842 /* DogAPI.swift in Sources */,
 				F14B4DB8299F2F180055B842 /* HomeImageDownloadView.swift in Sources */,
+				F14B4DCA299F3B900055B842 /* NetworkTask.swift in Sources */,
+				F14B4DC0299F3AD90055B842 /* Host.swift in Sources */,
+				F14B4DD5299F3FBC0055B842 /* Array+.swift in Sources */,
 				F14B4DB6299F2E340055B842 /* HomeViewModel.swift in Sources */,
 				F14B4D9F299F2C860055B842 /* SceneDelegate.swift in Sources */,
+				F14B4DCE299F3C190055B842 /* NetworkProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
