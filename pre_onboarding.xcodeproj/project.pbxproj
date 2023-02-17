@@ -16,6 +16,8 @@
 		F14B4DB4299F2E2E0055B842 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B4DB3299F2E2E0055B842 /* HomeView.swift */; };
 		F14B4DB6299F2E340055B842 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B4DB5299F2E340055B842 /* HomeViewModel.swift */; };
 		F14B4DB8299F2F180055B842 /* HomeImageDownloadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B4DB7299F2F180055B842 /* HomeImageDownloadView.swift */; };
+		F14B4DBB299F378C0055B842 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B4DBA299F378C0055B842 /* ImageDownloader.swift */; };
+		F14B4DBE299F38880055B842 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B4DBD299F38880055B842 /* HTTPMethod.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +34,8 @@
 		F14B4DB3299F2E2E0055B842 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		F14B4DB5299F2E340055B842 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		F14B4DB7299F2F180055B842 /* HomeImageDownloadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeImageDownloadView.swift; sourceTree = "<group>"; };
+		F14B4DBA299F378C0055B842 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
+		F14B4DBD299F38880055B842 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +88,8 @@
 		F14B4D9B299F2C860055B842 /* pre_onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				F14B4DBC299F387B0055B842 /* Network */,
+				F14B4DB9299F37840055B842 /* Manager */,
 				F14B4DB2299F2DA40055B842 /* Home */,
 				F14B4D9C299F2C860055B842 /* AppDelegate.swift */,
 				F14B4D9E299F2C860055B842 /* SceneDelegate.swift */,
@@ -103,6 +109,22 @@
 				F14B4DB7299F2F180055B842 /* HomeImageDownloadView.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		F14B4DB9299F37840055B842 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				F14B4DBA299F378C0055B842 /* ImageDownloader.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		F14B4DBC299F387B0055B842 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F14B4DBD299F38880055B842 /* HTTPMethod.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,7 +243,9 @@
 			files = (
 				F14B4DA1299F2C860055B842 /* HomeViewController.swift in Sources */,
 				F14B4DB4299F2E2E0055B842 /* HomeView.swift in Sources */,
+				F14B4DBB299F378C0055B842 /* ImageDownloader.swift in Sources */,
 				F14B4D9D299F2C860055B842 /* AppDelegate.swift in Sources */,
+				F14B4DBE299F38880055B842 /* HTTPMethod.swift in Sources */,
 				F14B4DB8299F2F180055B842 /* HomeImageDownloadView.swift in Sources */,
 				F14B4DB6299F2E340055B842 /* HomeViewModel.swift in Sources */,
 				F14B4D9F299F2C860055B842 /* SceneDelegate.swift in Sources */,
