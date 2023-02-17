@@ -48,6 +48,12 @@ final class ImageDownloader {
         self.dataTasks[id] = nil
     }
     
+    func progress(from imageView: UIImageView) -> Progress? {
+        let id = String(describing: imageView)
+        guard let dataTaks = self.dataTasks[id] else { return nil }
+        return dataTaks.progress
+    }
+    
     private var dataTasks: [String: URLSessionDataTask] = [:]
     private var imageCache = NSCache<NSString, UIImage>()
     
